@@ -7,9 +7,7 @@ module RedmineChangeToPublic
         base.class_eval do
           unloadable
           base.send(:include, InstanceMethods)
-          # prepend_before_filter :find_issue_and_project, :only => [:create_notification]
-          # prepend_after_filter :public_journals, :only => [:show],
-          #  :if => proc { User.current.logged? }
+          
           alias_method_chain :show, :public_mode
         end
       end

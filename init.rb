@@ -15,5 +15,6 @@ Redmine::Plugin.register :redmine_change_to_public do
     ApplicationController.send(:include, RedmineChangeToPublic::Patches::ApplicationControllerPatch)
     MyController.send(:include, RedmineChangeToPublic::Patches::MyControllerPatch)
     IssuesController.send(:include, RedmineChangeToPublic::Patches::IssuesControllerPatch)
+    AttachmentsHelper.send(:include, RedmineChangeToPublic::Patches::AttachmentsHelperPatch)
   end
 end
