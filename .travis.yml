@@ -23,4 +23,4 @@ script:
   - bash -x ./.travis-init.sh -t || exit 1
   - bash -x ./.travis-init.sh -u || exit 1
 before_script:
-  - mysql -e 'create database redmine_mentions_test;'
+  - mysql -e 'create database redmine_change_to_public_test;'
