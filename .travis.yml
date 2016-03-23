@@ -12,7 +12,7 @@ env:
   - REDMINE_VERSION=3.0.0 VERBOSE=no DB=mysql
 
 script:
-  - export PLUGIN=redmine_mentions
+  - export PLUGIN=redmine_change_to_public
   - export WORKSPACE=$(pwd)/workspace
   - export PATH_TO_PLUGIN=$(pwd)
   - export PATH_TO_REDMINE=$WORKSPACE/redmine
