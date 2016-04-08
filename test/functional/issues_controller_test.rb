@@ -6,13 +6,13 @@ class IssuesControllerTest < Redmine::IntegrationTest
 
   def setup
     Journal.destroy_all
-    Journal.create(journalized_id: 1,
+    @first_journal = Journal.create(journalized_id: 1,
                    journalized_type: "Issue",
                    user_id: 2,
                    notes: "Journal notes 1",
                    created_on: Time.now - 3.days,
                    private_notes: false)
-    Journal.create(journalized_id: 1,
+    @second_journal = Journal.create(journalized_id: 1,
                    journalized_type: "Issue",
                    user_id: 2,
                    notes: "Journal notes 2",
@@ -25,7 +25,8 @@ class IssuesControllerTest < Redmine::IntegrationTest
     User.current.update(public_mode: true)
     get issue_path(Issue.find(1))
     assert_response 200
-    assert assigns(:journals).size, 1
+    assert assigns(:journals).include?(@first_journal)
+    assert_not assigns(:journals).include?(@second_journal)
   end
 
 end
