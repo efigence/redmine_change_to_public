@@ -7,17 +7,17 @@ class IssuesControllerTest < Redmine::IntegrationTest
   def setup
     Journal.destroy_all
     @first_journal = Journal.create(journalized_id: 1,
-                   journalized_type: "Issue",
-                   user_id: 2,
-                   notes: "Journal notes 1",
-                   created_on: Time.now - 3.days,
-                   private_notes: false)
+                                    journalized_type: "Issue",
+                                    user_id: 2,
+                                    notes: "Journal notes 1",
+                                    created_on: Time.now - 3.days,
+                                    private_notes: false)
     @second_journal = Journal.create(journalized_id: 1,
-                   journalized_type: "Issue",
-                   user_id: 2,
-                   notes: "Journal notes 2",
-                   created_on: Time.now - 2.days,
-                   private_notes: true)
+                                     journalized_type: "Issue",
+                                     user_id: 2,
+                                     notes: "Journal notes 2",
+                                     created_on: Time.now - 2.days,
+                                     private_notes: true)
   end
 
   def test_issue_show_action_shouldnt_assign_private_journals
