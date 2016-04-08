@@ -5,4 +5,5 @@ comment:
   id: 1
   journalized_type: Issue
   user_id: 1
-  journalized_id: 5
+  journalized_id: 1
+  private_notes: true
